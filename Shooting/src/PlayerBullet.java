@@ -2,8 +2,9 @@
 public class PlayerBullet extends Character
 {
   public PlayerBullet(double x,double y,double vx,double vy) 
-  {
-	  super(x,y,vx+5,vy);
+  {  
+	  super(x,y,vx,vy);
+	  
   }
   public void draw(MyFrame f) 
 	{
