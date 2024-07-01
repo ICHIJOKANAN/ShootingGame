@@ -88,6 +88,8 @@ public class GameFrame extends MyFrame
        }
    }
 
+   
+   
   public void movePlayerBullets() 
   {
 	 int i = 0;
@@ -102,7 +104,8 @@ public class GameFrame extends MyFrame
          }
          else 
          {
-      	   i++;
+      	   i++;//
+      	   
          }
      }
   }
