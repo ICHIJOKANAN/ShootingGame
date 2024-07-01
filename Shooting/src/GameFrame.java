@@ -30,8 +30,7 @@ public class GameFrame extends MyFrame
        {
 
            Enemy e = GameWorld.enemies.get(i);
-           if (Math.abs(e.x - GameWorld.player.x) <= 30 &&
-                   Math.abs(e.y - GameWorld.player.y) <= 30) 
+           if(checkHit(GameWorld.player,e))
            {
 
                System.out.println("やられた!");
@@ -40,6 +39,8 @@ public class GameFrame extends MyFrame
            }
            
        }
+       
+       sleep(0.03);
        
    }
   
@@ -55,32 +56,36 @@ public class GameFrame extends MyFrame
            while (j < GameWorld.enemies.size()) 
            {
                Enemy e = GameWorld.enemies.get(j);
-
-               if (Math.abs(e.x - b.x) <= 30 && Math.abs(e.y - b.y) <= 30) 
+               if (checkHit(e,b))
                {
-                   System.out.println("あたり");
-                   hits++;
+            	   System.out.println("あたり");
+            	   hits++;
+                   e.life--;
+               
                    GameWorld.enemies.remove(j);
                }
                else
                {
-                   j++;
+            	   j++;
                }
+
+               
            }
+           
            if (hits > 0)
            {
-               GameWorld.playerBullets.remove(i);
+              GameWorld.playerBullets.remove(i);
            }
            else 
            {
-               i++;
+              i++;
            }
        }
    }
    
    public void moveEnemies() 
    {
-	   for(int i =0; i < GameWorld.enemies.size(); i++)
+	   for(int i = 0; i < GameWorld.enemies.size(); i++)
        {
     	   Enemy e = GameWorld.enemies.get(i);
     	   e.draw(this);
@@ -108,6 +113,18 @@ public class GameFrame extends MyFrame
       	   
          }
      }
+  }
+  
+  public boolean checkHit(Character a,Character b)
+  {
+	  if(Math.abs(a.x-b.x)<=30 && Math.abs(a.y-b.y)<=30)
+	  {
+		  return true;
+	  }
+	  else
+	  {
+		  return false;
+	  }
   }
 
 }
