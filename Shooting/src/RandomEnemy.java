@@ -4,11 +4,7 @@ public class RandomEnemy extends Enemy
   public RandomEnemy (double x, double y, double vx, double vy) 
   {
       super(x, y, vx, vy);
-<<<<<<< HEAD
-      life = 2;
-=======
-     
->>>>>>> practice13
+      life =+GameWorld.stage;
   }
   public void move()
   {
