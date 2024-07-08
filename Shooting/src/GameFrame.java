@@ -74,7 +74,7 @@ public class GameFrame extends MyFrame
            
        }
        
-       sleep(0.03);
+      
        
    
    
