@@ -10,6 +10,10 @@ public class GameFrame extends MyFrame
 	   GameWorld.score=0;
 	   while(true)
       {
+		   GameWorld.player.x=100;
+		   GameWorld.player.y=300;
+		   
+		   
 		 GameWorld.playerBullets = new Vector<PlayerBullet>();
 		 GameWorld.enemies = new Vector<Enemy>();
 		 GameWorld.enemies.add(new EnemyBase(100,50,GameWorld.stage,0));
@@ -46,7 +50,7 @@ public class GameFrame extends MyFrame
 				 if (GameWorld.enterPressed)
 				 {
 					 GameWorld.stage=1;
-					 GameWorld.stage=0;
+					 GameWorld.score=0;
 					 break;
 				 }
 			 }
@@ -102,7 +106,7 @@ public class GameFrame extends MyFrame
                }
                if(e.life<=0)
                {
-            	   GameWorld.score+=e.score;
+            	   GameWorld.score++;
             	   GameWorld.enemies.remove(j);
                }
                else

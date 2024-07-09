@@ -10,7 +10,7 @@ public class RandomEnemy extends Enemy
   {
 	  super.move();
 	  
-	  vx = Math.random()*GameWorld.stage-2;
+	 vx = (Math.random() - 0.5) * GameWorld.stage;
   }
 
   public void draw(MyFrame f) {
